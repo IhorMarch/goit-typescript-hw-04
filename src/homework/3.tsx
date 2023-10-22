@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React,{ ChangeEvent,useState }  from 'react';
 
 export function FormComponent() {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState<string>("");
 
-  const handleChange = (event) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    event.preventDefault();
     setValue(event.target.value);
   };
 
   return (
-    <input type="text" value={value} onChange={handleChange} />
+    <input type="text" value={value} onChange={handleChange:} />
   );
 }
